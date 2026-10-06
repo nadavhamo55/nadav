@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#141B2D">
+  <meta name="description" content="A focused AP Physics 1 study space for Force and Translational Dynamics.">
+  <title>AP Physics 1 | Force &amp; Motion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="questions.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="Force and Motion home">
+        <span class="brand-mark" aria-hidden="true">F</span>
+        <span><strong>Force &amp; Motion</strong><small>AP PHYSICS 1 <i>/</i> UNIT 02</small></span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="nav-link active" data-view="home" aria-current="page">Home</button>
+        <button class="nav-link" data-view="learn">Learn</button>
+        <button class="nav-link" data-view="practice">Practice</button>
+        <button class="nav-link" data-view="review">Review <span class="nav-count" id="review-count">0</span></button>
+        <button class="nav-link" data-view="formulas">Formulas</button>
+      </nav>
+      <div class="topbar-meta"><span class="live-dot"></span><span>Progress saved</span></div>
+    </header>
+
+    <main>
+      <section class="view active" id="view-home" aria-labelledby="home-title">
+        <div class="welcome-row">
+          <div class="welcome-copy">
+            <p class="eyebrow"><span class="eyebrow-line"></span> YOUR STUDY SPACE <span class="eyebrow-dot">/</span> UNIT 02</p>
+            <h1 id="home-title">Force &amp; <em>motion.</em></h1>
+            <p class="welcome-subtitle">Small steps. Clear thinking. You have this.</p>
+          </div>
+          <div class="study-note"><span class="note-icon" aria-hidden="true">02</span><span><b>Today's focus</b><small>One question at a time</small></span><span class="note-arrow" aria-hidden="true">↗</span></div>
+        </div>
+
+        <section class="stats-strip" aria-label="Your study stats">
+          <div class="stat-cell"><span class="stat-icon stat-icon-coral" aria-hidden="true">◎</span><div><strong id="home-score">0%</strong><span>Overall accuracy</span></div></div>
+          <div class="stat-cell"><span class="stat-icon stat-icon-teal" aria-hidden="true">↗</span><div><strong id="home-streak">0</strong><span>Current streak</span></div></div>
+          <div class="stat-cell"><span class="stat-icon stat-icon-gold" aria-hidden="true">✓</span><div><strong id="home-answered">0</strong><span>Questions tried</span></div></div>
+          <button class="primary-button" id="start-practice"><span aria-hidden="true">▶</span> Start a practice set</button>
+        </section>
+
+        <div class="section-heading topic-heading">
+          <div><p class="eyebrow">PICK UP WHERE YOU ARE</p><h2>Your topics</h2></div>
+          <span class="section-side-note"><span class="tiny-spark" aria-hidden="true">✳</span> 8 topic areas</span>
+        </div>
+        <div class="topic-grid" id="topic-grid"></div>
+        <section class="test-banner">
+          <div class="test-graphic" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div class="test-copy"><p class="eyebrow">READY TO CHECK IN?</p><h2>Take a 15-question test</h2><p>Mixed topics. No hints until the end.</p></div>
+          <button class="outline-button" id="start-test">Begin test <span aria-hidden="true">↗</span></button>
+        </section>
+      </section>
+
+      <section class="view" id="view-learn" aria-labelledby="learn-title">
+        <div class="page-heading"><p class="eyebrow">BUILD A CLEAR PICTURE</p><h1 id="learn-title">Learn <em>the ideas.</em></h1><p>Pick a topic and take it one step at a time.</p></div>
+        <div class="learn-layout"><aside class="learn-sidebar" id="learn-topic-list" aria-label="Choose a lesson"></aside><article class="lesson-panel" id="lesson-content" aria-live="polite"></article></div>
+      </section>
+
+      <section class="view" id="view-practice" aria-labelledby="practice-title">
+        <div class="page-heading practice-heading"><div><p class="eyebrow" id="practice-eyebrow">A LITTLE PRACTICE GOES A LONG WAY</p><h1 id="practice-title">Practice <em>space.</em></h1><p id="practice-subtitle">A mixed set, one question at a time.</p></div><button class="text-button" id="exit-practice">← Back to topics</button></div>
+        <div class="quiz-shell" id="quiz-shell"></div>
+      </section>
+
+      <section class="view" id="view-review" aria-labelledby="review-title">
+        <div class="page-heading"><p class="eyebrow">MISSED IT? KEEP IT.</p><h1 id="review-title">Your <em>review list.</em></h1><p>Questions you missed stay here until you are ready to try them again.</p></div>
+        <div class="review-summary" id="review-summary"></div>
+        <div class="review-list" id="review-list"></div>
+      </section>
+
+      <section class="view" id="view-formulas" aria-labelledby="formulas-title">
+        <div class="page-heading"><p class="eyebrow">UNIT 02 REFERENCE</p><h1 id="formulas-title">Formula <em>sheet.</em></h1><p>Use SI units unless a question says otherwise.</p></div>
+        <div class="constant-note"><span class="constant-symbol">g</span><span><b>Near Earth's surface</b><small>g = 9.8 m/s^2, downward</small></span></div>
+        <div class="formula-grid" id="formula-grid"></div>
+      </section>
+    </main>
+    <footer class="site-footer"><span>AP PHYSICS 1 <i>/</i> FORCE &amp; TRANSLATIONAL DYNAMICS</span><span>Made for steady progress <span class="footer-star" aria-hidden="true">✳</span></span></footer>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </div>
+</body>
+</html>
