@@ -49,7 +49,7 @@ button { -webkit-tap-highlight-color: transparent; }
 .brand small i, .site-footer i { color: var(--amber); font-style: normal; }
 .main-nav { display: flex; align-items: center; gap: 4px; padding: 5px; border: 1px solid var(--line); border-radius: 13px; background: rgba(5,10,22,.18); }
 .nav-link { position: relative; min-height: 40px; padding: 7px 14px; border: 0; border-radius: 9px; color: var(--muted); background: transparent; cursor: pointer; font-size: 14px; font-weight: 500; transition: background .25s, color .25s, box-shadow .25s, transform .25s; }
-.nav-link:hover { color: var(--ink); background: var(--glass-strong); transform: translateY(-1px); }
+.nav-link:hover { color: var(--ink); background: var(--glass-strong); box-shadow: 0 0 13px rgba(245,208,76,.12); transform: translateY(-1px); }
 .nav-link.active { color: var(--ink); background: rgba(255,255,255,.1); }
 .nav-count { display: inline-grid; place-items: center; min-width: 20px; height: 20px; margin-left: 3px; border-radius: 10px; color: #f2a197; background: rgba(239,136,141,.14); font-size: 11px; }
 .topbar-meta { display: flex; align-items: center; gap: 9px; white-space: nowrap; color: var(--muted); font-size: 12px; }
@@ -144,7 +144,7 @@ h1 em, .section-heading h2 em { color: #e7bf75; font-weight: 500; }
 .practice-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 15px; }
 .practice-heading .page-heading, .practice-heading > div { margin-bottom: 0; }
 .text-button { padding: 8px 0 5px 10px; color: var(--muted); background: transparent; font-size: 13px; }
-.text-button:hover { color: var(--ink); transform: translateX(-2px); }
+.text-button:hover { color: var(--ink); box-shadow: 0 0 13px rgba(245,208,76,.13); transform: translateX(-2px); }
 .quiz-shell { width: min(790px, 100%); margin: 0 auto; }
 .quiz-topline { display: flex; align-items: center; gap: 17px; margin-bottom: 12px; color: var(--muted); font-size: 12px; }
 .quiz-topline strong { color: var(--ink); font-size: 13px; }.quiz-score { margin-left: auto; }

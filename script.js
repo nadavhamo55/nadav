@@ -206,8 +206,6 @@
     }
 
     if (session.mode === 'test' && session.phase !== 'answer') {
-      const wasCorrect = session.testResults[session.testResults.length - 1].correct;
-      cardState = wasCorrect ? ' state-correct' : ' state-wrong';
       feedback = '<div class="feedback-box"><h3 class="feedback-title">Response recorded</h3><p>Keep going. Your results and explanations will show after question 15.</p></div>';
       actions = '<button class="next-button" data-next>Next <span class="button-arrow" aria-hidden="true">→</span></button>';
     }
@@ -242,7 +240,7 @@
     if (!input || input.value.trim() === '') return null;
     const value = Number(input.value);
     if (!Number.isFinite(value)) return null;
-    const tolerance = Math.max(Math.abs(question.answer) * 0.02, 0.01);
+    const tolerance = Math.abs(question.answer) * 0.02;
     return { value: value, label: String(value) + (question.unit ? ' ' + question.unit : ''), correct: Math.abs(value - question.answer) <= tolerance };
   }
 
@@ -297,7 +295,10 @@
     updateStats(question, selected.correct);
 
     if (session.mode === 'test') {
-      if (selected.correct) session.totalCorrect += 1;
+      if (selected.correct) {
+        session.totalCorrect += 1;
+        removeFromReview(question);
+      }
       if (!selected.correct) addToReview(question, selected.label);
       session.testResults.push({ question: question, selected: selected, correct: selected.correct });
       session.phase = 'testRecorded';
